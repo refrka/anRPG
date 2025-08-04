@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://cysvw6d7h3fdj"]
+
+[ext_resource type="Script" uid="uid://b2xtsgporf2rh" path="res://game.gd" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://cdemodu2kqrqn" path="res://sprites/player.png" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://biphgu5c2whgu" path="res://sprites/rat.png" id="3_fc0e3"]
+
+[sub_resource type="Animation" id="Animation_feb5d"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fc0e3"]
+_data = {
+&"attack": SubResource("Animation_feb5d")
+}
+
+[node name="Game" type="Node"]
+script = ExtResource("1_80nbo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.02475, 0.0237, 0.03, 1)
+
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(252, 176)
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_feb5d")
+hframes = 8
+vframes = 2
+
+[node name="Rat" type="Node2D" parent="."]
+position = Vector2(354, 182)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rat"]
+scale = Vector2(2, 2)
+texture = ExtResource("3_fc0e3")
+hframes = 5
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rat"]
+libraries = {
+&"": SubResource("AnimationLibrary_fc0e3")
+}
