@@ -1,12 +1,55 @@
-[gd_scene load_steps=4 format=3 uid="uid://betrbr40ljk4l"]
+[gd_scene load_steps=22 format=3 uid="uid://csrb0dgersdjp"]
 
-[ext_resource type="PackedScene" uid="uid://cc6f8163ibod3" path="res://player.tscn" id="1_tt30a"]
+[ext_resource type="Texture2D" uid="uid://dj437ywymk723" path="res://sprites/bow.png" id="1_2ayvv"]
+[ext_resource type="PackedScene" uid="uid://p8dylhnprmqf" path="res://player.tscn" id="1_tt30a"]
+[ext_resource type="Script" uid="uid://b2jlmjj2w10rv" path="res://home.gd" id="1_w1mvj"]
+[ext_resource type="Texture2D" uid="uid://u5nmwyr555to" path="res://sprites/spear.png" id="2_w1mvj"]
+[ext_resource type="Texture2D" uid="uid://d13cxes36wluu" path="res://sprites/sword.png" id="3_lxycn"]
+[ext_resource type="Texture2D" uid="uid://b5fjcbmy4oju8" path="res://sprites/button_next_on.png" id="6_vqw7c"]
+[ext_resource type="Texture2D" uid="uid://b7aujtvjiu6f7" path="res://sprites/button_next_off.png" id="7_86xni"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0o1r"]
 bg_color = Color(0.135, 0.25, 0.156083, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt30a"]
 bg_color = Color(0.147, 0.3, 0.17505, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1mvj"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxycn"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqw7c"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86xni"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6q8i"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdh31"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0ehs"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdsdt"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vqw7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86xni"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqw7c"]
+texture = ExtResource("7_86xni")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qq0qw"]
+texture = ExtResource("6_vqw7c")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,8 +58,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w1mvj")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PlayerPanel" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 64.0
 offset_top = 56.0
@@ -24,7 +68,15 @@ offset_right = 224.0
 offset_bottom = 304.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j0o1r")
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
+[node name="ItemPanel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 56.0
+offset_right = 576.0
+offset_bottom = 304.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j0o1r")
+
+[node name="PlayerSquare" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(48, 48)
 layout_mode = 0
 offset_left = 120.0
@@ -33,5 +85,107 @@ offset_right = 168.0
 offset_bottom = 144.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_tt30a")
 
+[node name="BowPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 360.0
+offset_top = 96.0
+offset_right = 408.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w1mvj")
+
+[node name="Sprite2D" type="Sprite2D" parent="BowPanel"]
+position = Vector2(24, 24)
+texture = ExtResource("1_2ayvv")
+
+[node name="SpearPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 424.0
+offset_top = 96.0
+offset_right = 472.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxycn")
+
+[node name="Sprite2D" type="Sprite2D" parent="SpearPanel"]
+position = Vector2(24, 24)
+texture = ExtResource("2_w1mvj")
+
+[node name="SwordPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 488.0
+offset_top = 96.0
+offset_right = 536.0
+offset_bottom = 144.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vqw7c")
+
+[node name="Sprite2D" type="Sprite2D" parent="SwordPanel"]
+position = Vector2(24, 24)
+texture = ExtResource("3_lxycn")
+
+[node name="Item4" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 360.0
+offset_top = 156.0
+offset_right = 408.0
+offset_bottom = 204.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_86xni")
+
+[node name="Item6" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 488.0
+offset_top = 156.0
+offset_right = 536.0
+offset_bottom = 204.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q6q8i")
+
+[node name="Item7" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 360.0
+offset_top = 216.0
+offset_right = 408.0
+offset_bottom = 264.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tdh31")
+
+[node name="Item8" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 424.0
+offset_top = 216.0
+offset_right = 472.0
+offset_bottom = 264.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x0ehs")
+
+[node name="Item9" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 488.0
+offset_top = 216.0
+offset_right = 536.0
+offset_bottom = 264.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rdsdt")
+
 [node name="Node2D" parent="." instance=ExtResource("1_tt30a")]
 position = Vector2(144, 116)
+
+[node name="FightButton" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 15)
+layout_mode = 0
+offset_left = 440.0
+offset_top = 172.0
+offset_right = 456.0
+offset_bottom = 187.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vqw7c")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_86xni")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vqw7c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qq0qw")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqw7c")
+disabled = true

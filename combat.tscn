@@ -1,37 +1,59 @@
-[gd_scene load_steps=5 format=3 uid="uid://w4dd5uqww356"]
+[gd_scene load_steps=3 format=3 uid="uid://cwi4yucj4nl37"]
 
-[ext_resource type="Texture2D" uid="uid://cdemodu2kqrqn" path="res://sprites/player.png" id="1_s0t75"]
-[ext_resource type="Texture2D" uid="uid://biphgu5c2whgu" path="res://sprites/rat.png" id="2_kx3u1"]
+[ext_resource type="Script" uid="uid://bw8dkd38pbj8o" path="res://combat.gd" id="1_kx3u1"]
+[ext_resource type="PackedScene" uid="uid://yjkocbu8p3tt" path="res://rat.tscn" id="3_kx3u1"]
 
-[sub_resource type="Animation" id="Animation_feb5d"]
-resource_name = "attack"
+[node name="Combat" type="Node2D"]
+script = ExtResource("1_kx3u1")
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fc0e3"]
-_data = {
-&"attack": SubResource("Animation_feb5d")
-}
+[node name="Label" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 64.0
+offset_right = 209.0
+offset_bottom = 87.0
+size_flags_horizontal = 4
+text = "hp:"
 
-[node name="Node2D" type="Node2D"]
+[node name="Label2" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 88.0
+offset_right = 219.0
+offset_bottom = 111.0
+size_flags_horizontal = 4
+text = "atk:"
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2(252, 176)
-scale = Vector2(2, 2)
+[node name="Label3" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 112.0
+offset_right = 219.0
+offset_bottom = 135.0
+size_flags_horizontal = 4
+text = "def:"
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_s0t75")
-hframes = 8
-vframes = 2
+[node name="hp" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 224.0
+offset_top = 64.0
+offset_right = 249.0
+offset_bottom = 87.0
+size_flags_horizontal = 4
 
-[node name="Rat" type="Node2D" parent="."]
-position = Vector2(354, 182)
+[node name="atk" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 224.0
+offset_top = 88.0
+offset_right = 259.0
+offset_bottom = 111.0
+size_flags_horizontal = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Rat"]
-scale = Vector2(2, 2)
-texture = ExtResource("2_kx3u1")
-hframes = 5
-vframes = 2
+[node name="def" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 224.0
+offset_top = 112.0
+offset_right = 259.0
+offset_bottom = 135.0
+size_flags_horizontal = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Rat"]
-libraries = {
-&"": SubResource("AnimationLibrary_fc0e3")
-}
+[node name="rat" parent="." instance=ExtResource("3_kx3u1")]
+unique_name_in_owner = true
+position = Vector2(376, 184)

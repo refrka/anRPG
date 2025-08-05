@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://yjkocbu8p3tt"]
+
+[ext_resource type="Texture2D" uid="uid://biphgu5c2whgu" path="res://sprites/rat.png" id="1_pmwci"]
+[ext_resource type="Script" uid="uid://bucdngtmabwwa" path="res://rat.gd" id="1_xl1m0"]
+
+[sub_resource type="Animation" id="Animation_feb5d"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fc0e3"]
+_data = {
+&"attack": SubResource("Animation_feb5d")
+}
+
+[node name="rat" type="Node2D"]
+script = ExtResource("1_xl1m0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_pmwci")
+hframes = 5
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fc0e3")
+}
