@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://uf20o3d5w7vw"]
+
+[ext_resource type="Script" uid="uid://dhjo3iovk2n3e" path="res://item_data.gd" id="1_4t41y"]
+[ext_resource type="PackedScene" uid="uid://bo0qab3o3kyph" path="res://items/buff.tscn" id="1_ta7rv"]
+
+[resource]
+script = ExtResource("1_4t41y")
+item_name = "Buff"
+cost = "15"
+value_change = 1.0
+item_scene = ExtResource("1_ta7rv")
+loot_chance = 10
+metadata/_custom_type_script = "uid://dhjo3iovk2n3e"

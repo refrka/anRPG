@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://b3g8qf4r5mwuh"]
+
+[ext_resource type="Script" uid="uid://d3rboqmqvqa3" path="res://enemies/enemy_data.gd" id="1_v3hnl"]
+[ext_resource type="PackedScene" uid="uid://yjkocbu8p3tt" path="res://enemies/rat.tscn" id="1_xuhaq"]
+
+[resource]
+script = ExtResource("1_v3hnl")
+can_attack = true
+enemy_name = "rat"
+hp = 12
+atk = 2
+def = 2
+atk_time = 1.3
+xp_value = 5
+coin_value_min = 1
+coin_value_max = 3
+loot = Array[int]([2])
+loot_chance = 3
+enemy_scene = ExtResource("1_xuhaq")
+metadata/_custom_type_script = "uid://d3rboqmqvqa3"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://xfk1ulm23u8q"]
+
+[ext_resource type="PackedScene" uid="uid://dwoacse0vlrkk" path="res://items/potion.tscn" id="1_8h85v"]
+[ext_resource type="Script" uid="uid://dhjo3iovk2n3e" path="res://item_data.gd" id="1_70df6"]
+
+[resource]
+script = ExtResource("1_70df6")
+item_name = "Potion"
+cost = "8"
+value_change = 10.0
+item_scene = ExtResource("1_8h85v")
+loot_chance = 10
+metadata/_custom_type_script = "uid://dhjo3iovk2n3e"

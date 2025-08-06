@@ -7,6 +7,7 @@ func _ready() -> void:
 	%home_button.pressed.connect(_on_home_button_pressed)
 	var item_count = 0
 	for item in Global.game.player.inventory:
+		
 		var item_panel = %item_list.get_child(item_count)
 		item_panels.append(item_panel)
 		item_panel.gui_input.connect(_on_gui_input.bind(item_panel))
@@ -16,6 +17,7 @@ func _ready() -> void:
 			if label.name == "ItemLabel%s" % item_count:
 				label.text = item.item_name
 		item_count += 1
+
 	if item_count == Global.game.player.max_inventory_size:
 		%inventory_full.visible = true
 

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 SceneManager="*res://SceneManager.gd"
 Enums="*res://Enums.gd"
 Global="*res://Global.gd"
+SignalBus="*res://SignalBus.gd"
 
 [debug]
 

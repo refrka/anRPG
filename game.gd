@@ -13,6 +13,7 @@ var active_scenes:= {}
 var player = preload("res://player.tscn").instantiate()
 
 func _ready() -> void:
+	player.connect_signals()
 	Global.game = self
 	SceneManager.game = self
 	state = 0

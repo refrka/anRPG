@@ -6,5 +6,23 @@ enum GameState {
     INVENTORY,
     COMBAT,
     CRAFT,
-    PAUSE
+    PAUSE,
+}
+
+enum Weapons {
+    BOW,
+    SPEAR,
+    SWORD,
+}
+
+enum Enemies {
+    RAT,
+    BAT,
+}
+
+enum Items {
+    POTION_HEAL,
+    BUFF_ATK,
+    BUFF_DEF,
+    EQUIPMENT_ARMOR
 }

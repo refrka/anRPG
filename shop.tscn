@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://betcwax5tx8u0"]
+[gd_scene load_steps=5 format=3 uid="uid://cvuurjuox52gm"]
 
-[ext_resource type="Script" uid="uid://bsoflbwmwk513" path="res://shop.gd" id="1_e7rdd"]
+[ext_resource type="Script" path="res://shop.gd" id="1_e7rdd"]
 [ext_resource type="Texture2D" uid="uid://d0nj6rnkyb3on" path="res://sprites/potion.png" id="1_viryw"]
+[ext_resource type="StyleBox" path="res://stylebox.tres" id="2_fgaav"]
+[ext_resource type="StyleBox" path="res://stylebox2.tres" id="3_6lah5"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,12 +14,44 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e7rdd")
 
-[node name="potion_button" type="TextureButton" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 112.0
+offset_right = 328.0
+offset_bottom = 232.0
+theme_override_styles/panel = ExtResource("2_fgaav")
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 138.0
+offset_right = 176.0
+offset_bottom = 170.0
+theme_override_styles/panel = ExtResource("3_6lah5")
+
+[node name="PanelContainer3" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 208.0
-offset_top = 128.0
+offset_top = 138.0
 offset_right = 240.0
-offset_bottom = 160.0
+offset_bottom = 170.0
+theme_override_styles/panel = ExtResource("3_6lah5")
+
+[node name="PanelContainer4" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 138.0
+offset_right = 304.0
+offset_bottom = 170.0
+theme_override_styles/panel = ExtResource("3_6lah5")
+
+[node name="potion_button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 136.0
+offset_right = 177.0
+offset_bottom = 168.0
 texture_normal = ExtResource("1_viryw")
 
 [node name="Label" type="Label" parent="potion_button"]

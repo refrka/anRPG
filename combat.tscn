@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://w4dd5uqww356"]
+[gd_scene load_steps=3 format=3 uid="uid://cwi4yucj4nl37"]
 
 [ext_resource type="Script" uid="uid://bw8dkd38pbj8o" path="res://combat.gd" id="1_kx3u1"]
-[ext_resource type="PackedScene" path="res://rat.tscn" id="3_kx3u1"]
+[ext_resource type="StyleBox" path="res://stylebox2.tres" id="2_kx3u1"]
 
 [node name="Combat" type="Node2D"]
 script = ExtResource("1_kx3u1")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 360.0
+offset_top = 168.0
+offset_right = 392.0
+offset_bottom = 200.0
+theme_override_styles/panel = ExtResource("2_kx3u1")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 184.0
@@ -53,7 +60,3 @@ offset_top = 112.0
 offset_right = 259.0
 offset_bottom = 135.0
 size_flags_horizontal = 4
-
-[node name="rat" parent="." instance=ExtResource("3_kx3u1")]
-unique_name_in_owner = true
-position = Vector2(376, 184)

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" load_steps=3 format=3 uid="uid://nlk120jl1iea"]
+
+[ext_resource type="PackedScene" uid="uid://bl1fobbbqcub2" path="res://enemies/bat.tscn" id="1_hiv56"]
+[ext_resource type="Script" uid="uid://d3rboqmqvqa3" path="res://enemies/enemy_data.gd" id="1_s3307"]
+
+[resource]
+script = ExtResource("1_s3307")
+can_attack = true
+enemy_name = "bat"
+hp = 15
+atk = 3
+def = 1
+atk_time = 1.8
+xp_value = 4
+coin_value_min = 2
+coin_value_max = 4
+loot = Array[int]([0, 1])
+loot_chance = 5
+enemy_scene = ExtResource("1_hiv56")
+metadata/_custom_type_script = "uid://d3rboqmqvqa3"
