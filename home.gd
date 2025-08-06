@@ -1,10 +1,17 @@
 extends Control
 
 func _ready() -> void:
+	%Shop.pressed.connect(_on_shop_press)
+	%Inventory.pressed.connect(_on_inventory_press)
 	%BowPanel.gui_input.connect(_on_button_press.bind("bow"))
 	%SpearPanel.gui_input.connect(_on_button_press.bind("spear"))
 	%SwordPanel.gui_input.connect(_on_button_press.bind("sword"))
 	%FightButton.pressed.connect(_on_fight_button_press)
+	Global.game.player.weapon = null
+	_border_off(%BowPanel)
+	_border_off(%SpearPanel)
+	_border_off(%SwordPanel)
+	update_player_info()
 
 func _border_on(panel: PanelContainer) -> void:
 	var stylebox = panel.get_theme_stylebox("panel")
@@ -41,3 +48,18 @@ func _on_button_press(input: InputEvent, weapon: String) -> void:
 	
 func _on_fight_button_press() -> void:
 	SceneManager.change_scene(Enums.GameState.COMBAT)
+
+func _on_shop_press() -> void:
+	SceneManager.change_scene(Enums.GameState.SHOP)
+
+func _on_inventory_press() -> void:
+	SceneManager.change_scene(Enums.GameState.INVENTORY)
+
+func update_player_info() -> void:
+	var player = Global.game.player
+	%level.text = str(player.level)
+	%hp.text = str(player.hp)
+	%victories.text = str(player.victories)
+	%coins.text = str(player.coins)
+	if player.last_rewards != "":
+		%last_rewards.text = player.last_rewards

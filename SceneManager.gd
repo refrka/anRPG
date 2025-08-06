@@ -5,6 +5,8 @@ var new_scene: Node
 
 var scene_ref:= {
 	Enums.GameState.HOME: "res://home.tscn",
+	Enums.GameState.SHOP: "res://shop.tscn",
+	Enums.GameState.INVENTORY: "res://inventory.tscn",
 	Enums.GameState.COMBAT: "res://combat.tscn",
 	Enums.GameState.CRAFT: "res://craft.tscn",
 	Enums.GameState.PAUSE: "res://pause.tscn",

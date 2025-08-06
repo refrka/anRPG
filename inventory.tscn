@@ -1,0 +1,214 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpfbse2j7pusu"]
+
+[ext_resource type="Script" uid="uid://dd724axm7tkik" path="res://inventory.gd" id="1_pohso"]
+[ext_resource type="StyleBox" uid="uid://cvqym88fw8p48" path="res://stylebox.tres" id="2_psafj"]
+[ext_resource type="StyleBox" uid="uid://chlgsswol4rbe" path="res://stylebox2.tres" id="3_5tt2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tt2m"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrqgh"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw5ng"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xmy5"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjyhv"]
+bg_color = Color(0.147, 0.3, 0.17505, 1)
+border_color = Color(0.941176, 0.701961, 0.14902, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pohso")
+
+[node name="home_button" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 69.0
+offset_bottom = 55.0
+text = "< go home
+"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 152.0
+theme_override_styles/panel = ExtResource("2_psafj")
+
+[node name="item_list" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemPanel1" type="PanelContainer" parent="item_list"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 140.0
+offset_top = 76.0
+offset_right = 180.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5tt2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="item_list/ItemPanel1"]
+position = Vector2(20, 20)
+
+[node name="ItemPanel2" type="PanelContainer" parent="item_list"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 204.0
+offset_top = 76.0
+offset_right = 244.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mrqgh")
+
+[node name="Sprite2D" type="Sprite2D" parent="item_list/ItemPanel2"]
+position = Vector2(20, 20)
+
+[node name="ItemPanel3" type="PanelContainer" parent="item_list"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 268.0
+offset_top = 76.0
+offset_right = 308.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dw5ng")
+
+[node name="Sprite2D" type="Sprite2D" parent="item_list/ItemPanel3"]
+position = Vector2(20, 20)
+
+[node name="ItemPanel4" type="PanelContainer" parent="item_list"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 332.0
+offset_top = 76.0
+offset_right = 372.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xmy5")
+
+[node name="Sprite2D" type="Sprite2D" parent="item_list/ItemPanel4"]
+position = Vector2(20, 20)
+
+[node name="ItemPanel5" type="PanelContainer" parent="item_list"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 396.0
+offset_top = 76.0
+offset_right = 436.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qjyhv")
+
+[node name="Sprite2D" type="Sprite2D" parent="item_list/ItemPanel5"]
+position = Vector2(20, 20)
+
+[node name="ItemPanel6" type="PanelContainer" parent="item_list"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 460.0
+offset_top = 76.0
+offset_right = 500.0
+offset_bottom = 116.0
+theme_override_styles/panel = ExtResource("3_5tt2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="item_list/ItemPanel6"]
+position = Vector2(20, 20)
+
+[node name="item_labels" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ItemLabel0" type="Label" parent="item_labels"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 123.0
+offset_right = 180.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 8
+
+[node name="ItemLabel1" type="Label" parent="item_labels"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 123.0
+offset_right = 244.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 8
+
+[node name="ItemLabel2" type="Label" parent="item_labels"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 123.0
+offset_right = 308.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 8
+
+[node name="ItemLabel3" type="Label" parent="item_labels"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 123.0
+offset_right = 372.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 8
+
+[node name="ItemLabel4" type="Label" parent="item_labels"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 123.0
+offset_right = 436.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 8
+
+[node name="ItemLabel5" type="Label" parent="item_labels"]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 123.0
+offset_right = 500.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 8
+
+[node name="inventory_full" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 248.0
+offset_top = 24.0
+offset_right = 373.0
+offset_bottom = 47.0
+text = "inventory is full!"
+
+[node name="use" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 40.0
+offset_bottom = 104.0
+disabled = true
+text = "use"
+
+[node name="discard" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0
+offset_top = 144.0
+offset_right = 97.0
+offset_bottom = 175.0
+disabled = true
+text = "discard"

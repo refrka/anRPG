@@ -1,24 +1,21 @@
-[gd_scene load_steps=22 format=3 uid="uid://csrb0dgersdjp"]
+[gd_scene load_steps=24 format=3 uid="uid://betrbr40ljk4l"]
 
 [ext_resource type="Texture2D" uid="uid://dj437ywymk723" path="res://sprites/bow.png" id="1_2ayvv"]
 [ext_resource type="PackedScene" uid="uid://p8dylhnprmqf" path="res://player.tscn" id="1_tt30a"]
 [ext_resource type="Script" uid="uid://b2jlmjj2w10rv" path="res://home.gd" id="1_w1mvj"]
+[ext_resource type="StyleBox" uid="uid://cvqym88fw8p48" path="res://stylebox.tres" id="2_q6q8i"]
 [ext_resource type="Texture2D" uid="uid://u5nmwyr555to" path="res://sprites/spear.png" id="2_w1mvj"]
 [ext_resource type="Texture2D" uid="uid://d13cxes36wluu" path="res://sprites/sword.png" id="3_lxycn"]
+[ext_resource type="StyleBox" uid="uid://chlgsswol4rbe" path="res://stylebox2.tres" id="4_tdh31"]
 [ext_resource type="Texture2D" uid="uid://b5fjcbmy4oju8" path="res://sprites/button_next_on.png" id="6_vqw7c"]
 [ext_resource type="Texture2D" uid="uid://b7aujtvjiu6f7" path="res://sprites/button_next_off.png" id="7_86xni"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0o1r"]
-bg_color = Color(0.135, 0.25, 0.156083, 1)
+[ext_resource type="Texture2D" uid="uid://llv750j5cb2n" path="res://sprites/shop_button.png" id="8_86xni"]
+[ext_resource type="Texture2D" uid="uid://cclupwy4jho0i" path="res://sprites/inventory_button.png" id="9_qq0qw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tt30a"]
 bg_color = Color(0.147, 0.3, 0.17505, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1mvj"]
-bg_color = Color(0.147, 0.3, 0.17505, 1)
-border_color = Color(0.941176, 0.701961, 0.14902, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxycn"]
 bg_color = Color(0.147, 0.3, 0.17505, 1)
 border_color = Color(0.941176, 0.701961, 0.14902, 1)
 
@@ -66,7 +63,7 @@ offset_left = 64.0
 offset_top = 56.0
 offset_right = 224.0
 offset_bottom = 304.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_j0o1r")
+theme_override_styles/panel = ExtResource("2_q6q8i")
 
 [node name="ItemPanel" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -74,7 +71,7 @@ offset_left = 320.0
 offset_top = 56.0
 offset_right = 576.0
 offset_bottom = 304.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_j0o1r")
+theme_override_styles/panel = ExtResource("2_q6q8i")
 
 [node name="PlayerSquare" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(48, 48)
@@ -107,7 +104,7 @@ offset_left = 424.0
 offset_top = 96.0
 offset_right = 472.0
 offset_bottom = 144.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_lxycn")
+theme_override_styles/panel = ExtResource("4_tdh31")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpearPanel"]
 position = Vector2(24, 24)
@@ -189,3 +186,110 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_vqw7c")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qq0qw")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vqw7c")
 disabled = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 64.0
+offset_right = 121.0
+offset_bottom = 87.0
+text = "level:"
+
+[node name="level" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_top = 64.0
+offset_right = 193.0
+offset_bottom = 87.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 144.0
+offset_right = 120.0
+offset_bottom = 167.0
+text = "hp:"
+
+[node name="hp" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_top = 144.0
+offset_right = 192.0
+offset_bottom = 167.0
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 232.0
+offset_right = 146.0
+offset_bottom = 281.0
+text = "enemies
+defeated:"
+
+[node name="victories" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_top = 244.0
+offset_right = 208.0
+offset_bottom = 268.0
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 176.0
+offset_right = 125.0
+offset_bottom = 199.0
+text = "coins:"
+
+[node name="coins" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 152.0
+offset_top = 176.0
+offset_right = 208.0
+offset_bottom = 200.0
+
+[node name="Shop" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 248.0
+offset_top = 96.0
+offset_right = 296.0
+offset_bottom = 144.0
+texture_normal = ExtResource("8_86xni")
+
+[node name="Label" type="Label" parent="Shop"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -16.0
+offset_right = 45.0
+offset_bottom = 7.0
+text = "shop"
+
+[node name="Inventory" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 256.0
+offset_top = 176.0
+offset_right = 288.0
+offset_bottom = 208.0
+texture_normal = ExtResource("9_qq0qw")
+
+[node name="Label" type="Label" parent="Inventory"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 55.0
+offset_bottom = -1.0
+text = "inventory"
+
+[node name="last_rewards" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 64.0
+offset_top = 16.0
+offset_right = 104.0
+offset_bottom = 39.0

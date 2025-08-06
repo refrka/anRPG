@@ -9,8 +9,14 @@ var atk:= 2
 var def:= 1
 var atk_time:= 1.5
 var timer:= 0.0
-var xp_given: int:
-	get: return randi_range(4,6)
+var xp_value:= 4
+var coin_value: int:
+	get: return randi_range(2,3)
+var other_rewards:= [
+	{"item": Potion.new(0), "chance": 98},
+	{"item": Buff.new(0), "chance": 99}
+]
+
 
 func attack() -> void:
 	attacking.emit()

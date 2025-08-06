@@ -39,6 +39,6 @@ func _on_hp_change() -> void:
 
 func _on_rat_died() -> void:
 	player.in_combat = false
-	player.gain_xp(%rat.xp_given)
+	player.gain_combat_rewards(%rat)
 	remove_child(player)
 	SceneManager.end_scene(Enums.GameState.HOME)

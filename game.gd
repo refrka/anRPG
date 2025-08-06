@@ -10,13 +10,12 @@ var state: int:
 
 var active_scenes:= {}
 
-var player = preload("res://player.tscn")
+var player = preload("res://player.tscn").instantiate()
 
 func _ready() -> void:
 	Global.game = self
 	SceneManager.game = self
 	state = 0
-	player = player.instantiate()
 
 func state_update(new_state: Enums.GameState) -> void:
 	SceneManager.start_scene(new_state)
